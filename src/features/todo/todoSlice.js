@@ -14,9 +14,10 @@ export const todoSclice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
+      console.log(action.payload, "checking value");
       const todo = {
         id: nanoid(),
-        text: action.payload.text,
+        text: action.payload,
       };
       state.todos.push(todo);
     },
